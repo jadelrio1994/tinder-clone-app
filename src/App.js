@@ -1,26 +1,28 @@
 import { Header } from "./Components/Header";
 import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { TinderCards } from "./Components/TinderCards";
 
 function App() {
   return (
     <div className="App">
-      {/* Header */}
       <Header />
-      {/* Tinder Cards */}
-      {/* Buttons below tinder cards */}
-
-      {/* Chats screen */}
-      {/* individual chat screen */}
+      <Router>
+        <Switch>
+          <Route path="/chat">
+            <h1>I am the chatpag</h1>
+            {/* Chats screen */}
+            {/* individual chat screen */}
+          </Route>
+          <Route path="/">
+            <TinderCards />
+            {/* Tinder Cards */}
+            {/* Buttons below tinder cards */}
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
 
 export default App;
-
-// apiKey: "AIzaSyBkSfXm_aR7vCk4SjvRAFQqop6xvaQxqMM",
-// authDomain: "tinder-clone-app-94f47.firebaseapp.com",
-// projectId: "tinder-clone-app-94f47",
-// storageBucket: "tinder-clone-app-94f47.appspot.com",
-// messagingSenderId: "553884702097",
-// appId: "1:553884702097:web:4fa8e8f310083a18ca7630",
-// measurementId: "G-LZGWESRYPG"
